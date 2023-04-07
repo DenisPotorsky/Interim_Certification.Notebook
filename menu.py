@@ -22,6 +22,9 @@ def menu():
             continue
 
         if n == 1:
+            if c.file_is_empty():
+                print('Заметок нет')
+                continue
             fw.show_file()
         elif n == 2:
             title = input('Введите название заметки: ')
@@ -30,6 +33,9 @@ def menu():
             fw.write_file(title, text, number_of_line, date)
             number_of_line += 1
         elif n == 3:
+            if c.file_is_empty():
+                print('Заметок нет')
+                continue
             fw.show_file()
             position = int(input('Введите порядковый номер заметки: '))
             try:
@@ -37,6 +43,9 @@ def menu():
             except:
                 print('Нет такой заметки')
         elif n == 4:
+            if c.file_is_empty():
+                print('Заметок нет')
+                continue
             fw.show_file()
             num = input('Введите номер заметки: ')
             try:
@@ -45,6 +54,9 @@ def menu():
             except:
                 print('Неверный ввод')
         elif n == 5:
+            if c.file_is_empty():
+                print('Заметок нет')
+                continue
             fw.show_file()
             num = input('Введите номер заметки: ')
             if int(num) <= number_of_line:
@@ -52,6 +64,9 @@ def menu():
             else:
                 print('Такого номера нет')
         elif n == 6:
+            if c.file_is_empty():
+                print('Заметок нет')
+                continue
             date = input('Введите дату в формате dd.mm.yyyy: ')
             c.search_note(date)
         elif n == 7:

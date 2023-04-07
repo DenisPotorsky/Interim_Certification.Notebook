@@ -62,3 +62,13 @@ def check_file():
         return 1
     else:
         return int(lst[-1][0]) + 1
+
+
+def file_is_empty():
+    file_list = []
+    with open('data_file.csv', 'r') as csv_file:
+        for line in csv_file:
+            file_list.append(line)
+    if len(file_list) >= 1:
+        return False
+    return True
