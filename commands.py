@@ -1,4 +1,4 @@
-import file_creating
+import file_operations
 import datetime
 
 
@@ -14,7 +14,7 @@ def delete_note(number):
         with open('data_file.csv', 'wb'):
             pass
         for i in range(lines - 1):
-            file_creating.write_file(lst[i][1], lst[i][2], i + 1, lst[i][3])
+            file_operations.write_file(lst[i][1], lst[i][2], i + 1, lst[i][3])
 
 
 def change_note(number_of_line):
@@ -33,7 +33,7 @@ def change_note(number_of_line):
         with open('data_file.csv', 'wb'):
             pass
         for i in range(lines):
-            file_creating.write_file(lst[i][1], lst[i][2], lst[i][0], lst[i][3])
+            file_operations.write_file(lst[i][1], lst[i][2], lst[i][0], lst[i][3])
 
 
 def show_one_note(number):
